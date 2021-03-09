@@ -1,0 +1,32 @@
+https://www.youtube.com/watch?v=DNYXgtZBRPE
+
+If we pass only:
+
+<Hero heroName='Joker'/> then entire application will crash this abviously not good
+
+what we want is if a perticular component throws an 
+error only that component should fallback in Ui and remaining should be uneffected.
+that can be seen by with error boundary
+
+
+For class component to become an error boundary we need to define either 
+getDerivedStateFromError(error) or componentDidCatch(error, info )
+
+Error boundaries are primarily useful for production but in developemnt they want to make error as highly visible
+
+Error boundaries will catch the errors and display a fallback UI
+(but in our case there is a text "something went wrong")
+
+Importent Point:::
+where to place them
+the placement of ER is completly upto you
+
+componentDidCatch(error,info)  =====  this method is used to log the error
+
+we should know EB , catch error during rendering in life cycle methods and in constructors of the whole tree 
+belowe them
+
+*******
+they donot catch errors inside event handlers , if we have onclick handler and want to catch an error 
+we just need to use regular try catch statements not error boundaries 
+
